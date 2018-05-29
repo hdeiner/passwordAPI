@@ -3,7 +3,7 @@ This project builds upon the foundation established in https://github.com/hdeine
 Things I've learned:
 * Docker for Windows sucks.
 * You must use Windows containers for Docker for Windows, unless you are willing to run the experimental flag on the daemon.  
-* The Windows containers for MSSQL Server are over times larger than the Linux containers.  
+* The Windows containers for MSSQL Server are over 10 times larger than the Linux containers.  
 * Here's where the Docker Windows MSSQL Servers are located:  https://hub.docker.com/r/microsoft/mssql-server-windows-developer/
 
 A sample docker command to start the Windows Container for MSSQL Server from PowerShell.  It is over 15GB in size.  Makes you wonder what the hell Microsoft has stuffed inside it!!
