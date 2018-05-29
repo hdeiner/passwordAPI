@@ -68,6 +68,7 @@
 
     <build>
         <plugins>
+
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.17</version>
@@ -82,6 +83,30 @@
                         <goals>
                             <goal>integration-test</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>2.0.0</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>proper_windows_rest_api_development_and+_testing</projectName>
+                            <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+                            <cucumberOutput>${project.build.directory}/cucumber/json-report.json</cucumberOutput>
+                            <skippedFails>true</skippedFails>
+                            <enableFlashCharts>false</enableFlashCharts>
+                            <buildNumber>42</buildNumber>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
