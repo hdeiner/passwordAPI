@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="Legacy Schema" author="howarddeiner">
+        <sqlFile path="src/main/db/legacy-schema.sql"/>
+    </changeSet>
+
+    <changeSet id="Legacy Schema Static Data" author="howarddeiner">
+        <sqlFile path="src/main/db/legacy-schema-static-data.sql"/>
+    </changeSet>
+
+    <changeSet id="Legacy Schema Stored Procedures" author="howarddeiner">
+        <createProcedure path="src/main/db/storedProcedures/fillOrder.sql"/>
+        <createProcedure path="src/main/db/storedProcedures/newCustomer.sql"/>
+        <createProcedure path="src/main/db/storedProcedures/placeNewOrder.sql"/>
+    </changeSet>
+
+</databaseChangeLog>
