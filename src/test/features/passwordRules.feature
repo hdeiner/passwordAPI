@@ -1,4 +1,8 @@
-Feature: UM Portal API - Passwords
+Feature: UM Portal API - Password Rules
+
+  As a security officer,
+  I want to ensure that users choose passwords that are hard to reproduce,
+  So that passwords aren't easily compromised.
 
   Scenario Outline: Conforms to password rules
     Given I want to change my password with the UM Portal on a fake server
@@ -15,13 +19,3 @@ Feature: UM Portal API - Passwords
       | pW1!                       | password must be at least 8 characters long                |
       | pass Word1!                | password can not have any spaces in it                     |
       | bFihJv!srBChibW4ay#eXEksdh | password OK                                                |
-
-  Scenario Outline: Password strength metric  (for now, length - 8 + special characters + numbers - sum of all consecutive Upper/lower/special/digit)
-    Given I want to change my password with the UM Portal on a fake server
-    When I try to set my new password to "<password>"
-    Then I then I should be told that it has a strength of "<passwordStrength>"
-
-    Examples:
-      | password                   | passwordStrength |
-      | passWord1!                 | 0                |
-      | bFihJv!srBChibW4ay#eXEksdh | 13               |
