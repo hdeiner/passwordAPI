@@ -61,6 +61,7 @@
     </dependencies>
 
     <build>
+
         <plugins>
 
             <plugin>
@@ -70,7 +71,6 @@
                     <includes>
                         <include>**/CucumberClientFake.java</include>
                     </includes>
-                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
                 <executions>
                     <execution>
@@ -98,9 +98,6 @@
                             <projectName>proper_windows_rest_api_development_and+_testing</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
                             <cucumberOutput>${project.build.directory}/cucumber/json-report.json</cucumberOutput>
-                            <skippedFails>true</skippedFails>
-                            <enableFlashCharts>false</enableFlashCharts>
-                            <buildNumber>42</buildNumber>
                         </configuration>
                     </execution>
                 </executions>
