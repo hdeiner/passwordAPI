@@ -58,6 +58,12 @@
             <version>0.3.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>3.15.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -65,6 +71,7 @@
         <plugins>
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.21.0</version>
                 <configuration>
@@ -74,7 +81,6 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>test</id>
                         <goals>
                             <goal>integration-test</goal>
                             <goal>verify</goal>
@@ -86,17 +92,17 @@
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
-                <version>2.4.0</version>
+                <version>3.15.0</version>
                 <executions>
                     <execution>
                         <id>execution</id>
-                        <phase>test</phase>
+                        <phase>post-integration-test</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>proper_windows_rest_api_development_and+_testing</projectName>
-                            <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+                            <projectName>UM Portal REST APIs: Are We There Yet?</projectName>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
                             <cucumberOutput>${project.build.directory}/cucumber/json-report.json</cucumberOutput>
                         </configuration>
                     </execution>
