@@ -36,7 +36,7 @@ public class CucumberTest {
 
             String jenkinsBasePath = "";
             String buildNumber = "1";
-            String projectName = "cucumber-jvm";
+            String projectName = "UM Portal REST APIs: Are We There Yet?";
             boolean skippedFails = true;
             boolean pendingFails = false;
             boolean undefinedFails = true;
