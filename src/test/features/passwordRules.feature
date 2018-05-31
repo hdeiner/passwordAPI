@@ -14,9 +14,8 @@ Feature: UM Portal API - Password Rules
       | 12345                      | password must have letters in it                           |
       | password                   | password must have both upper and lower case letters in it |
       | PASSWORD                   | password must have both upper and lower case letters in it |
-      | pASSWORD                   | password must have at least 1 special character in it      |
+      | pASSWORD1                  | password must have at least 1 special case character in it |
       | pASSWORD!                  | password must have at least 1 digit in it                  |
       | pW1!                       | password must be at least 8 characters long                |
       | pass Word1!                | password can not have any spaces in it                     |
       | bFihJv!srBChibW4ay#eXEksdh | password OK                                                |
-      | THIS_TEST_WILL_FAIL        | Take a look at failures as well                            |

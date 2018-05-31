@@ -1,4 +1,4 @@
-package test;
+package test.RESTWS_FAKE;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -19,8 +19,8 @@ import java.util.List;
 //      tags     = "",
 //      monochrome = false,
         features = { "src/test/features" },
-        glue     = { "test" },
-        plugin   = { "pretty", "html:target/cucumber/html-report", "json:target/cucumber/json-report.json" }
+        glue     = { "test.RESTWS_FAKE" },
+        plugin   = { "pretty", "html:target/cucumber/html-report", "json:target/RESTWS_FAKE/json-report.json" }
 )
 
 
@@ -30,9 +30,9 @@ public class CucumberTest {
         public static void generateReport() {
             System.out.println("Starting net.masterthought.cucumber Report");
 
-            File reportOutputDirectory = new File("target");
+            File reportOutputDirectory = new File("target/RESTWS_FAKE");
             List<String> jsonFiles = new ArrayList<String>();
-            jsonFiles.add("target//cucumber/json-report.json");
+            jsonFiles.add("target/RESTWS_FAKE/json-report.json");
 
             String jenkinsBasePath = "";
             String buildNumber = "1";
