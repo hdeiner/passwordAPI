@@ -72,43 +72,25 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
+                <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.21.0</version>
                 <configuration>
                     <includes>
-                        <include>**/CucumberClientFake.java</include>
+                        <include>**/CucumberTest_RESTWS_FAKE.java</include>
+                        <include>**/CucumberTest_unit.java</include>
                         <include>**/*Test.java</include>
                     </includes>
                 </configuration>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
+                            <goal>test</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
 
-            <plugin>
-                <groupId>net.masterthought</groupId>
-                <artifactId>maven-cucumber-reporting</artifactId>
-                <version>3.15.0</version>
-                <executions>
-                    <execution>
-                        <id>execution</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <projectName>UM Portal REST APIs: Are We There Yet?</projectName>
-                            <outputDirectory>${project.build.directory}</outputDirectory>
-                            <cucumberOutput>${project.build.directory}/cucumber/json-report.json</cucumberOutput>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+
 
         </plugins>
 
