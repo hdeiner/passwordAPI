@@ -8,7 +8,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class PasswordStrengthTest {
+public class PasswordStrengthUnitTest {
     @Test
     public void testPasswordLength0() throws Exception {
         assertThat(new PasswordStrength("").evaluate(), is(-8));

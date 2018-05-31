@@ -24,7 +24,7 @@ import java.util.List;
 )
 
 
-public class CucumberTest {
+public class CucumberTest_unit {
 
     @AfterClass
     public static void generateReport() {

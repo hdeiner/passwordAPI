@@ -24,7 +24,7 @@ import java.util.List;
 )
 
 
-public class CucumberTest {
+public class CucumberTest_RESTWS_FAKE {
 
         @AfterClass
         public static void generateReport() {

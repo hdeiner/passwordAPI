@@ -8,7 +8,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class PasswordRulesTest {
+public class PasswordRulesUnitTest {
     @Test
     public void testPasswordLength1() throws Exception {
         assertThat(new PasswordRules("a").evaluate(), is("password must be at least 8 characters long"));
