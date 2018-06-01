@@ -42,3 +42,7 @@ Remember, this integration/component testing is helping us answer the following:
 * "Is the code fit for purpose?"
 * "Am I providing business value?"
 * "Can others understand what I have to offer?"
+
+Work was done to run both unit, cucumber "unit type", and cucumber against fake WireMock server.  Now, I'd like to run against a full Glassfish Docker'ized web service with my code welded in place there.
+
+
