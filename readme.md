@@ -45,4 +45,8 @@ Remember, this integration/component testing is helping us answer the following:
 
 Work was done to run both unit, cucumber "unit type", and cucumber against fake WireMock server.  Now, I'd like to run against a full Glassfish Docker'ized web service with my code welded in place there.
 
+We will use Glassfish to run our web services inside Docker containers.  oracle/glassfish:latest  This implies development of the service in Java with javax.ws.rs
+
+
+
 
