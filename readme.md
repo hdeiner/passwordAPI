@@ -47,6 +47,19 @@ Work was done to run both unit, cucumber "unit type", and cucumber against fake 
 
 We will use Glassfish to run our web services inside Docker containers.  oracle/glassfish:latest  This implies development of the service in Java with javax.ws.rs
 
+Glassfish should allow deployment as 
+* asadmin start-domain
+* asadmin deploy  target/proper_windows_rest_api_development_and_testing-1.0-SNAPSHOT.war
 
+However, that results in  
+remote failure: Error occurred during deployment: Exception while loading the app : CDI deployment failure:Error instantiating :org.hibernate.validator.cdi.internal.ValidationExtension. Please see server.log for more details.
+Command deploy failed.
+
+OK.  How about foregoing the CDI Validation?
+* asadmin deploy --property implicitCdiEnabled=false target/proper_windows_rest_api_development_and_testing-1.0-SNAPSHOT.war
+
+That results in 
+remote failure: Error occurred during deployment: Exception while loading the app : java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: org.apache.catalina.LifecycleException: java.lang.ClassNotFoundException: org.joda.time.ReadableInstant. Please see server.log for more details.
+Command deploy failed.
 
 

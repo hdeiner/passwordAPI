@@ -9,7 +9,7 @@ import java.net.URI;
 
 public class Main {
     // Base URI the Grizzly HTTP server will listen on
-    public static final String BASE_URI = "http://0.0.0.0:28080/passwordAPI/1.0.0/";
+    public static final String BASE_URI = "http://0.0.0.0:18080/passwordAPI/1.0.0/";
 
     public static HttpServer startServer() {
         // create a resource config that scans for JAX-RS resources and providers
