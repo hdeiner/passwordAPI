@@ -1,4 +1,4 @@
-package test.RESTWS_FAKE;
+package test.rest_webservice_fake;
 
 interface CucumberClientInterface {
     public void startServer();

@@ -1,4 +1,4 @@
-package test.RESTWS_FAKE;
+package test.rest_webservice_fake;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import us.monoid.json.JSONException;

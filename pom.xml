@@ -114,7 +114,7 @@
                 <version>2.21.0</version>
                 <configuration>
                     <includes>
-                        <include>**/CucumberTest_RESTWS_FAKE.java</include>
+                        <include>**/CucumberTest_Rest_WebService_Fake.java</include>
                         <include>**/CucumberTest_unit.java</include>
                         <include>**/*Test.java</include>
                     </includes>
