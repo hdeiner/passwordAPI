@@ -62,4 +62,5 @@ That results in
 remote failure: Error occurred during deployment: Exception while loading the app : java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: org.apache.catalina.LifecycleException: java.lang.ClassNotFoundException: org.joda.time.ReadableInstant. Please see server.log for more details.
 Command deploy failed.
 
-
+sudo docker build --tag=restapi .
+sudo docker run -p 18080:8080 -t -i restapi

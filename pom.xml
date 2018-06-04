@@ -140,6 +140,15 @@
             </plugin>
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.1</version>
+                <configuration>
+                    <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.2.1</version>
@@ -151,23 +160,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.dekses.jersey.docker.demo.Main</mainClass>
+                    <mainClass>main.Main</mainClass>
                 </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.glassfish.hk2</groupId>
-                <artifactId>hk2-inhabitant-generator</artifactId>
-                <executions>
-                    <execution>
-                        <configuration>
-                            <locator>application</locator>
-                        </configuration>
-                        <goals>
-                            <goal>generate-inhabitants</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
         </plugins>
