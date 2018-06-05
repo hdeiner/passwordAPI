@@ -64,3 +64,28 @@ Command deploy failed.
 
 sudo docker build --tag=restapi .
 sudo docker run -p 18080:8080 -t -i restapi
+
+#SO WHAT SORTS OF TESTING DOES THIS PROJECT DEMONSTRATE, ANYWAY?
+
+Take a look at the directories at src/test/java/test
+
+## rest_webservice_fake  
+* This is acually where I started.  
+* It lays out the functionality of the REST API WebService as executable requirements as defined in the src/test/features Cucumber feature files.
+* CucumberClientFake uses WireMock at implement a fake server.
+* CucumberClientFake also uses Resty as an easy to implement RESTWS client
+* We are testing here that we implemented the interface correctly in terms of the JSON passed between client and server.
+* In src/test/resources/mappings, we find things like passwordStrength-11.json to see what a request that matches a Gherkin outline sample looks like
+* In src/test/resources/__files, we find things like passwordStrength-11.json to see what the corresponding response looks like
+* These tests run fairly quickly (3 s 24 ms)
+
+## unit  
+* This is where you will find traditional junit tests located
+* I built this code as I implemented the functionality in src/main/java/main/PasswordRules.java and PasswordStrength.java
+* I am testing that the code was built right, not that it actually answers all of the functionality concerns
+* These tests run extremely quickly (67 ms)
+
+## unit_cucumber  
+* Here, I have wired the execution of the same feature files to execute without going through the REST API level
+* I am testing that the right code was built, and that the functionality concerns are met
+* These tests run very quickly (464 ms)
