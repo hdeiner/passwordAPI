@@ -7,7 +7,7 @@ import cucumber.api.java.en.When;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class CucumberStepDefs {
+public class CucumberStepDefsFake {
     private static CucumberClientInterface cucumberClientInterface;
 
     private String password;
