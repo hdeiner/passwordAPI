@@ -29,7 +29,7 @@ public class CucumberClientFake implements CucumberClientInterface {
         wireMockServer.stop();
     };
 
-    public String getPasswordAdvice(String password){
+    public String getPasswordRules(String password){
         String words = "";
         Resty resty  = new Resty();
 
@@ -37,12 +37,12 @@ public class CucumberClientFake implements CucumberClientInterface {
         URI uri;
 
         try {
-            url = new URL("http://localhost:9010/getPasswordAdvice");
+            url = new URL("http://localhost:9010/getPasswordRules");
             uri = new URI(url.getProtocol(), url.getUserInfo(), url.getHost(), url.getPort(), url.getPath(), url.getQuery(), url.getRef());
             String requestToPost = "{\"password\": \"" + password + "\"}";
 
             JSONResource response = resty.json(uri,content(new JSONObject(requestToPost)));
-            words = (String) response.get("passwordAdvice");
+            words = (String) response.get("passwordRules");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (URISyntaxException e) {

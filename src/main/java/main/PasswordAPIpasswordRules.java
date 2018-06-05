@@ -19,6 +19,6 @@ public class PasswordAPIpasswordRules {
 
     private String jsonResponse(String password) {
         return "{\"password\": \"" + password + "\"," +
-                "\"passwordAdvice\":\"" + new PasswordRules(password).evaluate() + "\"}";
+                "\"passwordRules\":\"" + new PasswordRules(password).evaluate() + "\"}";
     }
 }

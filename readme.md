@@ -65,6 +65,17 @@ Command deploy failed.
 sudo docker build --tag=restapi .
 sudo docker run -p 18080:8080 -t -i restapi
 
+#By the way...
+## Once a server is running, you can run an easy test from the command line with something like
+```bash
+curl http://localhost:8080/passwordAPI/passwordRules/easyPassword
+```
+
+## And you should get a response like
+```bash
+{"password": "easyPassword","passwordRules":"password must have at least 1 digit in it"}``
+```
+
 #SO WHAT SORTS OF TESTING DOES THIS PROJECT DEMONSTRATE, ANYWAY?
 
 Take a look at the directories at src/test/java/test

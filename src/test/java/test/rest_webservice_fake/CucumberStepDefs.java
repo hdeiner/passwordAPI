@@ -36,7 +36,7 @@ public class CucumberStepDefs {
 
     @Then("^I then I should be told \"([^\"]*)\"$")
     public void i_then_I_should_be_told(String passwordAdvice) throws Exception {
-        assertThat(cucumberClientInterface.getPasswordAdvice(password), is(passwordAdvice));
+        assertThat(cucumberClientInterface.getPasswordRules(password), is(passwordAdvice));
     }
 
     @Then("^I then I should be told that it has a strength of \"([^\"]*)\"$")
