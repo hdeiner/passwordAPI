@@ -17,4 +17,4 @@ Feature: UM Portal API - Password Strength
     Examples:
       | password                   | passwordStrength |
       | passWord1!                 | -1               |
-      | bFihJv!srBChibW4ay#eXEksdh | 11               |
+      | bFihJv!srBChibW4ay*eXEksdh | 11               |
