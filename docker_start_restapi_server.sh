@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-sudo -S <<< "password"sudo docker build --tag=restapi .
-sudo -S <<< "password"sudo docker run -p 8080:8080 -it restapi:latest --name PasswordAPI
+sudo docker run -it -p 8080:8080 -v $(pwd)/target/passwordAPI.war:/usr/local/tomcat/webapps/passwordAPI.war --name passwordAPI -d tomcat:9.0.8-jre8
