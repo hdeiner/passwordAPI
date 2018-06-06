@@ -108,3 +108,6 @@ Take a look at the directories at src/test/java/test
 * One invokes this using mvn verify
 * We can have a lot of confidence that not only will the tests run well, but that they are likely to deploy without issue
 * These tests run pretty quick (558 ms).  The functionality offerred by dependency breaking in WireMock had it's price.
+
+# Of special note:
+Take a look at build_and_test_webservice.sh.  This bash script builds and tests a deployable war artifact.  Then it creates a fresh Docker container to deploy the artifact to.  It then runs tests against the deployed artifact INSIDE the Docker container.  When we are done, we have a completely deployable DOCKER CONTAINER that runs our tested microservice.
