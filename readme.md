@@ -47,24 +47,26 @@ Work was done to run both unit, cucumber "unit type", and cucumber against fake 
 
 We will use Glassfish to run our web services inside Docker containers.  oracle/glassfish:latest  This implies development of the service in Java with javax.ws.rs
 
-Glassfish should allow deployment as 
-* asadmin start-domain
-* asadmin deploy  target/proper_windows_rest_api_development_and_testing-1.0-SNAPSHOT.war
-
+Glassfish should allow deployment as in
+```bash
+asadmin start-domain
+asadmin deploy  target/passwordAPI.war
+``` 
 However, that results in  
+```bash
 remote failure: Error occurred during deployment: Exception while loading the app : CDI deployment failure:Error instantiating :org.hibernate.validator.cdi.internal.ValidationExtension. Please see server.log for more details.
 Command deploy failed.
-
+```
 OK.  How about foregoing the CDI Validation?
-* asadmin deploy --property implicitCdiEnabled=false target/proper_windows_rest_api_development_and_testing-1.0-SNAPSHOT.war
-
+```bash
+asadmin deploy --property implicitCdiEnabled=false target/passwordAPI.war
+``` 
 That results in 
+```bash
 remote failure: Error occurred during deployment: Exception while loading the app : java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: org.apache.catalina.LifecycleException: java.lang.ClassNotFoundException: org.joda.time.ReadableInstant. Please see server.log for more details.
 Command deploy failed.
-
-sudo docker build --tag=restapi .
-sudo docker run -p 18080:8080 -t -i restapi
-
+```
+We'll stay simple and just use Tomcat for an application server.
 #By the way...
 ## Once a server is running, you can run an easy test from the command line with something like
 ```bash
@@ -100,3 +102,9 @@ Take a look at the directories at src/test/java/test
 * Here, I have wired the execution of the same feature files to execute without going through the REST API level
 * I am testing that the right code was built, and that the functionality concerns are met
 * These tests run very quickly (464 ms)
+
+## rest_webservice_local  
+* This set of tests runs the exact same set of Cucumber feature files through a locally hosted Tomcat based application server  
+* One invokes this using mvn verify
+* We can have a lot of confidence that not only will the tests run well, but that they are likely to deploy without issue
+* These tests run pretty quick (558 ms).  The functionality offerred by dependency breaking in WireMock had it's price.
