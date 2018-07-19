@@ -17,7 +17,7 @@ public class PasswordRules {
         if (password.matches(".*[ ]+.*")) {
             return "password can not have any spaces in it";
         }
-        if (!((password.matches(".*[A-Z]+.*")&&(password.matches(".*[a-z]+.*"))))) {
+        if (!(password.matches(".*[A-Z]+.*")&&(password.matches(".*[a-z]+.*")))) {
             return "password must have both upper and lower case letters in it";
         }
         if (!(password.matches(".*[0-9]+.*"))) {
