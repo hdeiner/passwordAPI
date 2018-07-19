@@ -19,3 +19,5 @@ Feature: UM Portal API - Password Rules
       | pW1!                       | password must be at least 8 characters long                |
       | pass Word1!                | password can not have any spaces in it                     |
       | bFihJv!srBChibW4ay#eXEksdh | password OK                                                |
+
+
