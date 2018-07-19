@@ -1,13 +1,9 @@
 package main;
 
-import org.glassfish.grizzly.Context;
 import org.glassfish.grizzly.http.server.HttpServer;
-import org.glassfish.grizzly.http.server.naming.NamingException;
-import org.glassfish.hk2.api.ServiceLocator;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 
-import javax.naming.InitialContext;
 import java.io.IOException;
 import java.net.URI;
 
