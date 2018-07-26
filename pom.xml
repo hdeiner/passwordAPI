@@ -205,6 +205,11 @@
                 </configuration>
             </plugin>
 
+            <!--
+                This is how we get code coverage data put together for SonarQube
+                to report on.
+            -->
+
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -298,6 +303,17 @@
             </plugin>
 
         </plugins>
+
+        <!--
+            This plugin is what allows us to update SonarQube
+            directly from the maven build.
+
+            We're accepting all of the defaults, which are perfect for us.
+            See https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Maven
+            for additional configuration information.
+
+            The typical way to invoke would be: mvn clean verify sonar:sonar
+        -->
 
         <pluginManagement>
             <plugins>
