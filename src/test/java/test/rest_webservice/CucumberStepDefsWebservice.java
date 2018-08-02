@@ -1,4 +1,4 @@
-package test.rest_webservice_local;
+package test.rest_webservice;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -7,7 +7,7 @@ import cucumber.api.java.en.When;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class CucumberStepDefsLocal {
+public class CucumberStepDefsWebservice {
     private static CucumberClientInterface cucumberClientInterface;
 
     private String password;
@@ -24,7 +24,7 @@ public class CucumberStepDefsLocal {
 
     @Given("^I want to change my password with the UM Portal on a fake server$")
     public void i_want_to_change_my_password_with_the_UM_Portal_fake_server() {
-        cucumberClientInterface = new CucumberClientLocal();
+        cucumberClientInterface = new CucumberClientWebservice();
         cucumberClientInterface.startServer();
     }
 

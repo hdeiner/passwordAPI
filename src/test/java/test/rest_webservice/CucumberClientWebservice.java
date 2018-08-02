@@ -1,20 +1,21 @@
-package test.rest_webservice_local;
+package test.rest_webservice;
 
 import us.monoid.json.JSONException;
-import us.monoid.json.JSONObject;
 import us.monoid.web.JSONResource;
 import us.monoid.web.Resty;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Properties;
 
-import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
 import static us.monoid.web.Resty.content;
 
-public class CucumberClientLocal implements CucumberClientInterface {
+public class CucumberClientWebservice implements CucumberClientInterface {
 
     public void startServer(){
     }
@@ -29,8 +30,15 @@ public class CucumberClientLocal implements CucumberClientInterface {
         URL url = null;
         URI uri;
 
+        Properties prop = new Properties();
+        InputStream input = null;
+
         try {
-            url = new URL("http://localhost:8080/passwordAPI/passwordRules/"+password);
+            input = new FileInputStream("rest_webservice.properties");
+            prop.load(input);
+            String hosturl = prop.getProperty("hosturl");
+
+            url = new URL(hosturl + "/passwordAPI/passwordRules/"+password);
             uri = new URI(url.getProtocol(), url.getUserInfo(), url.getHost(), url.getPort(), url.getPath(), url.getQuery(), url.getRef());
             JSONResource response = resty.json(uri);
             words = (String) response.get("passwordRules");
@@ -56,8 +64,15 @@ public class CucumberClientLocal implements CucumberClientInterface {
         URL url = null;
         URI uri;
 
+        Properties prop = new Properties();
+        InputStream input = null;
+
         try {
-            url = new URL("http://localhost:8080/passwordAPI/passwordStrength/" + password);
+            input = new FileInputStream("rest_webservice.properties");
+            prop.load(input);
+            String hosturl = prop.getProperty("hosturl");
+
+            url = new URL(hosturl + "/passwordAPI/passwordStrength/"+password);
             uri = new URI(url.getProtocol(), url.getUserInfo(), url.getHost(), url.getPort(), url.getPath(), url.getQuery(), url.getRef());
             JSONResource response = resty.json(uri);
             words = (String) response.get("passwordStrength");

@@ -154,7 +154,7 @@
                 <version>2.21.0</version>
                 <configuration>
                     <includes>
-                        <include>**/CucumberTest_Rest_WebService_Local.java</include>
+                        <include>**/CucumberTest_Rest_WebService.java</include>
                     </includes>
                     <trimStackTrace>false</trimStackTrace>
                 </configuration>

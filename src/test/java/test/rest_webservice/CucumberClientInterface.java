@@ -1,4 +1,4 @@
-package test.rest_webservice_local;
+package test.rest_webservice;
 
 interface CucumberClientInterface {
     void startServer();
