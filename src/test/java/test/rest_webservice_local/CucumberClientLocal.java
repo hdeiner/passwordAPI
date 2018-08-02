@@ -17,10 +17,10 @@ import static us.monoid.web.Resty.content;
 public class CucumberClientLocal implements CucumberClientInterface {
 
     public void startServer(){
-    };
+    }
 
     public void stopServer(){
-    };
+    }
 
     public String getPasswordRules(String password){
         String words = "";
@@ -47,7 +47,8 @@ public class CucumberClientLocal implements CucumberClientInterface {
         }
 
         return words;
-    };
+    }
+
     public String getPasswordStrength(String password){
         String words = "";
         Resty resty  = new Resty();
@@ -73,5 +74,5 @@ public class CucumberClientLocal implements CucumberClientInterface {
         }
 
         return words;
-    };
+    }
 }

@@ -111,3 +111,29 @@ Take a look at the directories at src/test/java/test
 
 # Of special note:
 Take a look at build_and_test_webservice.sh.  This bash script builds and tests a deployable war artifact.  Then it creates a fresh Docker container to deploy the artifact to.  It then runs tests against the deployed artifact INSIDE the Docker container.  When we are done, we have a completely deployable DOCKER CONTAINER that runs our tested microservice.
+
+# Terraform Stuff:
+
+Right now, there is enough Terraform stuff to build a SQL Server instance and a Tomcat Server.  The Tomcat server is also provisioned with the passwordAPI.war that we built.
+
+# Use
+1. Make sure that you can use AWS CLI without issue.  In particular,
+you need valid ~/.aws config and credentials files.
+2. Make sure that you have SSH keys generated in your ~/.ssh.  This can be done by: 
+```
+ssh-keygen -t rsa
+```
+3. Make sure that Terraform is installed.
+4. Ensure that terraformProvider.tf has appropriate settings for your use.  For example,
+the AWS region may have to change, and that will require a change in the 
+AMI used.
+5. On the command line, create the infrastructure with
+ ```
+ terraform init
+ terraform apply -auto-approve
+ ```
+6. When you're ready to get rid of the infrastructure that we built, do that as
+ ```
+ terraform destroy -auto-approve
+ ```
+7. But for some real fun,  

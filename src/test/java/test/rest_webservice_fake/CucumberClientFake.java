@@ -23,11 +23,11 @@ public class CucumberClientFake implements CucumberClientInterface {
             wireMockServer  = new WireMockServer(options().port(9010));
         }
         wireMockServer.start();
-    };
+    }
 
     public void stopServer(){
         wireMockServer.stop();
-    };
+    }
 
     public String getPasswordRules(String password){
         String words = "";
@@ -56,7 +56,8 @@ public class CucumberClientFake implements CucumberClientInterface {
         }
 
         return words;
-    };
+    }
+
     public String getPasswordStrength(String password){
         String words = "";
         Resty resty  = new Resty();
@@ -84,5 +85,5 @@ public class CucumberClientFake implements CucumberClientInterface {
         }
 
         return words;
-    };
+    }
 }
