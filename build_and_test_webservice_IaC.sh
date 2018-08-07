@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # build and test locally
-mvn clean test
+mvn clean verify
 
 # create the test infrasctucture
 # note: as part of the provisioning of the tomcat server, we deploy the war file
