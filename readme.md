@@ -136,4 +136,9 @@ AMI used.
  ```
  terraform destroy -auto-approve
  ```
-7. But for some real fun,  
+7. But for some real fun, take a look at build_and_test_webservice_IaC.  Here, we 
+* build and test locally,
+* create the test environment on demand with terraform, 
+* test remotely, 
+* destroy the test infrastructure 
+ 
