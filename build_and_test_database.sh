@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 echo Kill the current Docker sqlsvrtest container
-./docker_reset_sqlsvrtest_container.sh
+./docker/docker_reset_sqlsvrtest_container.sh
 echo Create a fresh Docker sqlsvrtest container
-./docker_start_sqlsvrtest_container.sh
+./docker/docker_start_sqlsvrtest_container.sh
 
 echo Pause 60 seconds to allow SQL Server to start up
 sleep 60
