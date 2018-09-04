@@ -18,7 +18,7 @@ resource "aws_instance" "ec2_passwordAPI_tomcat" {
       user = "ubuntu",
       private_key = "${file("~/.ssh/id_rsa")}"
     }
-    source      = "target/passwordAPI.war"
+    source      = "../target/passwordAPI.war"
     destination = "/var/lib/tomcat8/webapps/passwordAPI.war"
   }
   provisioner "remote-exec" {
