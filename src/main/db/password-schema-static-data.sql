@@ -1,0 +1,1 @@
+Insert into COMMON_PASSWORDS (NAME) values ('password');

@@ -5,8 +5,8 @@ echo Kill the current Docker sqlsvrtest container
 echo Create a fresh Docker sqlsvrtest container
 ./docker/docker_start_sqlsvrtest_container.sh
 
-echo Pause 60 seconds to allow SQL Server to start up
-sleep 60
+echo Pause 10 seconds to allow SQL Server to start up
+sleep 10
 
 echo Install tSQLt
 mkdir -p target/tSQLt
