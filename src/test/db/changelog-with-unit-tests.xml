@@ -14,4 +14,8 @@
         <createProcedure path="src/test/db/storedProcedures/testFillOrder.sql"/>
     </changeSet>
 
+    <changeSet id="Common Password Unit Tests" author="howarddeiner">
+        <createProcedure path="src/test/db/storedProcedures/testCommonPasswords.sql"/>
+    </changeSet>
+
 </databaseChangeLog>
