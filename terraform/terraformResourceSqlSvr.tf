@@ -10,7 +10,7 @@ resource "aws_instance" "ec2_passwordAPI_sqlsvr" {
       user = "ubuntu",
       private_key = "${file("~/.ssh/id_rsa")}"
     }
-    script = "terraformProvisionSqlSvr.sh"
+    script = "terraformProvisionSqlSvrUsingDocker.sh"
   }
   provisioner "remote-exec" {
     connection {

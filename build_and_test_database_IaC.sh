@@ -4,6 +4,7 @@
 cd terraform
 terraform apply -auto-approve
 export SQLSVR=$(echo `terraform output sqlsvr_dns`)
+echo we are running a terraformed MS SQLSVR instance on $SQLSVR
 rm ../liquibase.properties
 cat <<EOF >> ../liquibase.properties
 classpath=lib/sqljdbc_6.4/enu/mssql-jdbc-6.4.0.jre8.jar
