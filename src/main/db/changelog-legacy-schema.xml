@@ -21,4 +21,6 @@
 
     <include file="src/main/db/password-schema.xml"/>
 
+    <include file="src/main/db/um-portal-changelog.xml"/>
+
 </databaseChangeLog>

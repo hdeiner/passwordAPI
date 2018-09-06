@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+    <changeSet id="um-portal v3" author="howarddeiner">
+        <createTable tableName="ProviderType">
+            <column name="ProviderTypeId" type="bigint" autoIncrement="true"/>
+            <column name="Description" type="varchar(20)"/>
+            <column name="Active" type="boolean"/>
+            <column name="CreateTime" type="DateTime"/>
+            <column name="CreatedBy" type="varchar(64)"/>
+            <column name="ModifyTime" type="DateTime"/>
+            <column name="ModifyBy" type="varchar(64)"/>
+        </createTable>
+        <createTable tableName="State">
+            <column name="StateId" type="bigint" autoIncrement="true"/>
+            <column name="ProviderTypeId" type="varchar(2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Description" type="varchar(20)"/>
+            <column name="Active" type="boolean"/>
+            <column name="CreateTime" type="DateTime"/>
+            <column name="CreatedBy" type="varchar(64)"/>
+            <column name="ModifyTime" type="DateTime"/>
+            <column name="ModifyBy" type="varchar(64)"/>
+        </createTable>
+        <createTable tableName="EDIRequestor">
+            <column name="EDIRequestorId" type="bigint" autoIncrement="true"/>
+            <column name="ProviderTypeId" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NPI" type="varchar(15)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="Suffix" type="varchar(10)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="FirstName" type="varchar(30)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="LastName" type="varchar(30)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="MiddleName" type="varchar(30)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="EDIProviderInvitationId" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Active" type="boolean"/>
+            <column name="CreateTime" type="DateTime"/>
+            <column name="CreatedBy" type="varchar(64)"/>
+            <column name="ModifyTime" type="DateTime"/>
+            <column name="ModifyBy" type="varchar(64)"/>
+        </createTable>
+        <createTable tableName="EDIProviderInvitation">
+            <column name="EDIProviderInvitationId" type="bigint" autoIncrement="true"/>
+            <column name="FirstName" type="varchar(30)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="LastName" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="RegistrationNumber" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="InvitationSentDate" type="DateTime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EDIProviderInvitationStatusId" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Active" type="boolean"/>
+            <column name="CreateTime" type="DateTime"/>
+            <column name="CreatedBy" type="varchar(64)"/>
+            <column name="ModifyTime" type="DateTime"/>
+            <column name="ModifyBy" type="varchar(64)"/>
+        </createTable>
+        <createTable tableName="PreviousAuthRegVerification">
+            <column name="PreviousAuthRegVerificationId" type="bigint" autoIncrement="true"/>
+            <column name="EDIProviderInvitationId" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PreviousAuthId" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CreateTime" type="DateTime"/>
+            <column name="CreatedBy" type="varchar(64)"/>
+            <column name="ModifyTime" type="DateTime"/>
+            <column name="ModifyBy" type="varchar(64)"/>
+        </createTable>
+        <createTable tableName="PortalUser">
+            <column name="PortalUserId" type="bigint" autoIncrement="true"/>
+            <column name="EDIRequestorId" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CSSLoginId" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FaxNumber" type="varchar(30)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="PortalUserAdminId" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CreateTime" type="DateTime"/>
+            <column name="CreatedBy" type="varchar(64)"/>
+            <column name="ModifyTime" type="DateTime"/>
+            <column name="ModifyBy" type="varchar(64)"/>
+        </createTable>
+        <createTable tableName="EDIProviderInvitationStatus">
+            <column name="EDIProviderInvitationStatusId" type="bigint" autoIncrement="true"/>
+            <column name="Description" type="varchar(20)"/>
+            <column name="Active" type="boolean"/>
+            <column name="CreateTime" type="DateTime"/>
+            <column name="CreatedBy" type="varchar(64)"/>
+            <column name="ModifyTime" type="DateTime"/>
+            <column name="ModifyBy" type="varchar(64)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
